@@ -128,6 +128,37 @@ mystr = 'hello world itcast and itcastcpp'
 # print(f2.isdigit())
 # print(f3.isdigit())
 
+# isalnum
+# 如果 string 至少有一个字符并且所有字符都是字母或数字则返回 True,否则返回 False
+# g1 = "hello111 "
+# g2 = "hello111"
+# print(g1.isalnum())
+# print(g2.isalnum())
+
+# isspace
+# 如果 mystr 中只包含空格，则返回 True，否则返回 False.
+# h = "he "
+# h2 = ""
+# h3 = "   "
+# h4 = " "
+# print(h.isspace())
+# print(h2.isspace())
+# print(h3.isspace())
+# print(h4.isspace())
+
+# join
+# 返回通过指定字符连接序列中元素后生成的新字符串
+# h = ":"
+# seq = ("a", "b", "c");
+# print(h.join(seq))
+
+# 给定一个字符串aStr，返回使用空格或者'\t'分割后的倒数第二个子串
+j = "hello world\n all the space"
+ls = j.split()
+print(ls)
+print(ls[-2])
+
+
 
 
 
