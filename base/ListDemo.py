@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 # @Author  : Leon
 # @Version : 2018/8/23 9:50
-
-
-
 """
 for name in namesList:
     print(name)
@@ -78,9 +75,38 @@ else:
 # remove() 函数用于移除列表中某个值的第一个匹配项；没有返回值
 namesList = ['xiaoWang', 'xiaoZhang', 'xiaoHua', "xiaoMing"]
 namesList.remove("xiaoZhang")
-print(namesList)
+# print(namesList)
 
 # 排序(sort, reverse)
+# list.sort(cmp=None, key=None, reverse=False)
+# cmp -- 可选参数, 如果指定了该参数会使用该参数的方法进行排序
+# key -- 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。
+# reverse -- 排序规则，reverse = True 降序， reverse = False 升序（默认）
+# aList = [1, 4, 2, 3]
+# aList.sort(reverse=True)
+# print(aList)
+# bList = [1, 4, 2, 3]
+# bList.sort()
+# print(bList)
+# vowels = ['e', 'a', 'u', 'o', 'i']
+# vowels.sort(reverse=True)
+# print(vowels)
+
+# reverse()
+# aList = [123, 'xyz', 'zara', 'abc', 'xyz']
+# aList.reverse()
+# print(aList)
+
+# 列表嵌套
+# schoolNames = [['北京大学', '清华大学'], ['南开大学', '天津大学', '天津师范大学'], ['山东大学', '中国海洋大学']]
+# i = 0
+# while i < len(schoolNames):
+#     j = 0
+#     while j < len(schoolNames[i]):
+#         print(schoolNames[i][j])
+#         j += 1
+#     print("-" * 20)
+#     i += 1
 
 
 
