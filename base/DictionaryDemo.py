@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Author  : Leon
 # @Version : 2018/8/23 22:32
-
+import operator
 # Dictionary 字典 类似于Java中map
 # info = {'name': '班长', 'id': 100, 'sex': 'f', 'address': '地球亚洲中国北京'}
 # 根据键访问值
@@ -91,3 +91,48 @@
 # + 合并 字符串、列表、元组
 # * 复制 字符串、列表、元组
 #
+
+# cmp
+# cmp(x,y) 函数用于比较2个对象，如果 x < y 返回 -1, 如果 x == y 返回 0, 如果 x > y 返回 1
+# python3 没有此模块，引入了新的operator模块
+# a = 100
+# b = 99
+# c = 101
+# print(operator.eq(a, b))
+# print(operator.lt(a, b))
+# print(operator.gt(a, b))
+# print(operator.gt("awrwe3r423423234we34sfdfsr", "b234234a"))
+
+# #####################################################################
+# 引用相关
+# a = 1
+# b = a
+# a = 2
+# print(b)
+
+# 可变类型，值可以改变：
+# 列表 list
+# 字典 dict
+
+# 不可变类型，值不可以改变：
+# 数值类型 int, long, bool, float
+# 字符串 str
+# 元组 tuple
+
+# 使用id()函数查看其类似于内存地址的号码
+
+# 练习
+# 怎样交换两个变量的值？
+a = 1
+b = 8
+
+a = a + b
+b = a - b
+a = a - b
+print(a)
+print(b)
+
+
+
+
+
