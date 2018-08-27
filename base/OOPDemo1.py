@@ -39,20 +39,20 @@
 # print(bm.price)
 
 # 魔法方法
-class Car:
-    def __init__(self, color, brand):
-        self.color = color
-        self.brand = brand
-
-    def move(self):
-        print(self.color + "的" + self.brand + "汽车在公路上狂奔...")
-
-    def __str__(self):
-       msg = self.color + "的" + self.brand + "汽车"
-       return msg
-
-
-bm = Car("黑色", "宝马")
+# class Car:
+#     def __init__(self, color, brand):
+#         self.color = color
+#         self.brand = brand
+#
+#     def move(self):
+#         print(self.color + "的" + self.brand + "汽车在公路上狂奔...")
+#
+#     def __str__(self):
+#        msg = self.color + "的" + self.brand + "汽车"
+#        return msg
+#
+#
+# bm = Car("黑色", "宝马")
 # bm.move()
 # print(bm)
 
@@ -121,6 +121,29 @@ bm = Car("黑色", "宝马")
 # __del__()方法
 # 创建对象后，python解释器默认调用__init__()方法；
 # 当删除一个对象时，python解释器也会默认调用一个方法，这个方法为__del__()方法
+
+class Car:
+    def __init__(self, brand, color):
+        self.color = color
+        self.brand = brand
+
+    def __del__(self):
+        print("对象" + self.brand + "被销毁了")
+
+
+c1 = Car("宝马", "白色")
+c2 = Car("奔驰", "黑色")
+
+del c1
+del c2
+
+# 结论：
+# 执行del之后如果引用计数等于0，则会立即调用__del__()。
+# 执行del之后如果引用计数不等于0，则会在所有程序执行完后自动调用__del__()。
+# 如果没有del语句，当所有的程序执行完之后，__del__()会自动被调用，用来清理实例对象，回收内存。
+
+
+
 
 
 
