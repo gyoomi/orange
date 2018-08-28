@@ -189,19 +189,55 @@
 
 # 通过实例(对象)去修改类属性
 
-class Person(object):
+# class Person(object):
+#     country = "china"
+#
+#
+# print(Person.country)
+# p = Person()
+# p.country = "japan"
+# print(p.country)     # 实例变量会屏蔽掉同名的类属性
+# print(Person.country)
+# del p.country
+# print("*" * 10)
+# print(p.country)     # china
+
+# ###################################################
+# 静态方法和类方法
+# 1. 类方法
+# class Person:
+#     country = "china"
+#
+#     @classmethod
+#     def get_country(cls):
+#         return cls.country
+#
+#     @classmethod
+#     def set_country(cls, country):
+#         cls.country = country
+#
+#
+# p = Person()
+# # print(p.get_country())
+# # print(Person.country)
+# # print(Person.get_country())
+# p.set_country("日本")
+# print(p.get_country())
+# print(Person.get_country())
+# Person.set_country("法国")
+# print(Person.get_country())
+
+# 2. 静态方法
+# 需要通过修饰器@staticmethod来进行修饰，静态方法不需要多定义参数
+class Person:
     country = "china"
 
+    @staticmethod
+    def get_country():
+        return Person.country
 
-print(Person.country)
-p = Person()
-p.country = "japan"
-print(p.country)     # 实例变量会屏蔽掉同名的类属性
-print(Person.country)
-del p.country
-print("*" * 10)
-print(p.country)     # china
 
+print(Person.get_country())
 
 
 
