@@ -214,19 +214,117 @@
 
 # else
 # 同样在try...except...中也是如此，即如果没有捕获到异常，那么就执行else中的事情
+# try:
+#     num = 33
+#     print(num)
+# except NameError as msg:
+#     print("NameError occur: %s " % msg)
+# else:
+#     print("没有发生异常，真高兴！")
+
+# try...finally...
+import time
 
 
+# try:
+#     f = open("d:\\test.txt")
+#     try:
+#         while True:
+#             content = f.readline()
+#             if len(content) == 0:
+#                 break
+#             time.sleep(2)
+#             print(content)
+#     except:
+#         print("读取的过程中发生了异常")
+#     finally:
+#         f.close()
+#         print("关闭文件")
+# except:
+#     print("打开文件错误")
+
+# ################################################################
+# 异常的传递
+# try嵌套中(略)
+
+# 函数嵌套调用中
+# 如果try嵌套，那么如果里面的try没有捕获到这个异常，那么外面的try会接收到这个异常，然后进行处理，如果外边的try依然没有捕获到，那么再进行传递。。。
+
+# #########################################################################
+# 抛出自定义的异常
+# raise语句来引发一个异常。异常/错误对象必须有一个名字，且它们应是Error或Exception类的子类
+# class ShortInputException(Exception):
+#     def __init__(self, length, least):
+#         super().__init__(self)
+#         self.length = length
+#         self.least = least
+#
+#
+# def main():
+#     try:
+#         s = input("请输入 ---> ")
+#         if len(s) < 3:
+#             raise ShortInputException(len(s), 3)
+#     except ShortInputException as msg:
+#         print("ShortInputException:输入的长度是%d, 最小长度是%d" % (msg.length, msg.least))
+#     else:
+#         print("没有异常发生！")
+#
+#
+# main()
+
+# 关于代码#super().__init__()的说明
+# 这一行代码，可以调用也可以不调用，建议调用，因为__init__方法往往是用来对创建完的对象进行初始化工作，
+# 如果在子类中重写了父类的__init__方法，即意味着父类中的很多初始化工作没有做，这样就不保证程序的稳定了，
+# 所以在以后的开发中，如果重写了父类的__init__方法，最好是先调用父类的这个方法，然后再添加自己的功能
 
 
+# #############################################################################################
+# 异常处理中抛出异常
+# class Test:
+#     def __init__(self, switch):
+#         self.switch = switch
+#
+#     def calc(self, a, b):
+#         try:
+#             return a/b
+#         except Exception as msg:
+#             if self.switch:
+#                 print("捕获开启，已经捕获到了异常，信息如下:")
+#                 print(msg)
+#             else:
+#                 raise
+#                 # 重新抛出这个异常，此时就不会被这个异常处理给捕获到，从而触发默认的异常处理
 
 
+# a = Test(True)
+# a.calc(10, 0)
+
+# b = Test(False)
+# b.calc(10, 0)
+
+# ##################################################################################
+# 模块
+# 模块制作
+# <1>定义自己的模块
+# 每个Python文件都可以作为一个模块，模块的名字就是文件的名字
+
+# 模块中的__all__
+# 1. 没有__all__
+# 2. 模块中有__all__
+# 如果一个文件中有__all__变量，那么也就意味着这个变量中的元素，不会被from xxx import *时导入
+
+# ################################################################################
+# python中的包
 
 
+# import base.msg.sendmsg
+# base.msg.sendmsg.sendmsg()
+#
+# import base.msg.revmsg
+# base.msg.revmsg.revmsg()
 
 
-
-
-
-
-
-
+from base.msg import *
+sendmsg.sendmsg()
+revmsg.revmsg()
